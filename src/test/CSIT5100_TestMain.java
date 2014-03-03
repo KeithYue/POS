@@ -8,7 +8,10 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ TestCompositeDiscount.class,
 	ProductDiscountTest.class,
 	EventDiscountTest.class,
-	CustomerDiscountTest.class
+	CustomerDiscountTest.class,
+	HKCurrencyTest.class,
+	USCurrencyTest.class,
+	POSBatchModeTest.class
 	})
 public class CSIT5100_TestMain {
 
