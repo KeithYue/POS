@@ -11,7 +11,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	CustomerDiscountTest.class,
 	HKCurrencyTest.class,
 	USCurrencyTest.class,
-	POSBatchModeTest.class
+	POSBatchModeTest.class,
+	POSConsoleModeTest.class
 	})
 public class CSIT5100_TestMain {
 

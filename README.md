@@ -17,6 +17,9 @@ http://stackoverflow.com/questions/309396/java-how-to-test-methods-that-call-sys
   * has member ship / no membership
   * cash enough / cash not enough, there is not any check for invalid cash such as negative cash
 * How to decide whether the saleRegister menthod is normally invoked.
+  * read the log file to decide whether the result is correct
+* Eventhough we can use sub-class to override some method to test, but for the POS situation, there is only one instance of POS, 
+even we use subclass, the instance is still POS instance, so we need to solve the singleton problem
   
 #### Some guidelines
 * The purpose of test cases is to test if a method performs correctly. 
