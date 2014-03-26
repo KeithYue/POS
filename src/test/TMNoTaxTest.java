@@ -8,25 +8,23 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import POS.USCurrency;
+import POS.TMNoTax;
 
-public class USCurrencyTest {
-	private USCurrency usCurrency;
+public class TMNoTaxTest {
+	private TMNoTax tmNoTax;
 
 	@Before
 	public void setUp() throws Exception {
-		usCurrency = new USCurrency();
+		tmNoTax = new TMNoTax();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		usCurrency = null;
 	}
 
 	@Test
-	public void testShow() {
-		// Assert.assertTrue(usCurrency.show() == "US$");
-		Assert.assertThat("US$", is(usCurrency.show()));
+	public final void testAfterTaxPrice() {
+		Assert.assertThat(0.2f, is(tmNoTax.afterTaxPrice(0.2f)));
 	}
 
 }

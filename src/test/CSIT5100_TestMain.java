@@ -12,7 +12,11 @@ import org.junit.runners.Suite.SuiteClasses;
 	HKCurrencyTest.class,
 	USCurrencyTest.class,
 	POSBatchModeTest.class,
-	POSConsoleModeTest.class
+	POSConsoleModeTest.class,
+	TMNoTaxTest.class,
+	TMVATTest.class,
+	PaymentTest.class,
+	CurrencyFactoryTest.class
 	})
 public class CSIT5100_TestMain {
 

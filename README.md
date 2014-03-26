@@ -20,6 +20,15 @@ http://stackoverflow.com/questions/309396/java-how-to-test-methods-that-call-sys
   * read the log file to decide whether the result is correct
 * Eventhough we can use sub-class to override some method to test, but for the POS situation, there is only one instance of POS, 
 even we use subclass, the instance is still POS instance, so we need to solve the singleton problem
+* use Assert.assertThat instead of other statement is more suitable. https://github.com/junit-team/junit/wiki/Matchers-and-assertthat
+* how to test the functionality of init(), register(), saleRegister()?
+  * use log file, now we use log file to check whether the programm is executed normally.
+  * use sytem.out?
+* The codes which can not be executed in POS:
+  * line 212, 231, 429
+  * batach 永远无法输入membership card
+* 钱输入为负数也是可以的，因为程序取的是绝对值
+* 在batachFile中故意遗漏membership card的选项
   
 #### Some guidelines
 * The purpose of test cases is to test if a method performs correctly. 
@@ -29,3 +38,4 @@ The assert statements should reflect what are to be checked if the test is carri
 * So in order to test some methods that require console inputs, you need to simulate user interactions by 
 redirecting system standard input to your own input streams. 
 For example, you can redirect System.in to some string
+* use reflection to test private method

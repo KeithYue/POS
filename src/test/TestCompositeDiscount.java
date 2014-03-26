@@ -4,6 +4,7 @@
 package test;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -66,7 +67,15 @@ public class TestCompositeDiscount {
 		//after removing two discounts, there will be no discount
 		compDiscount.remove(discount1);
 		compDiscount.remove(discount2);
-		Assert.assertTrue("no savings after removing all discounts", compDiscount.discount() == 1.0f);
+		Assert.assertThat(1.0f, is(compDiscount.discount()));
+		
+		// add two discount
+		compDiscount.add(discount1);
+		compDiscount.add(discount2);
+		compDiscount.remove(discount1);
+		compDiscount.remove(discount2);
+		// Assert.assertTrue("no savings after removing all discounts", compDiscount.discount() == 1.0f);
+		Assert.assertThat(1.0f, is(compDiscount.discount()));
 	}
 
 }

@@ -1,2 +1,3 @@
-SalesID06	total HK$1.4; pencil 2
+Electronic-Sales Counter is started successfully by user zhulin!
+SalesID00	total HK$1.4; pencil 2
 User zhulin has successfully logged off!

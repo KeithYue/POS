@@ -6,7 +6,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 import org.junit.rules.ExpectedException;
+import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.*;
 
 import POS.POS;
 
@@ -19,6 +21,9 @@ public class POSBatchModeTest {
 
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
+
+	@Rule
+	public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
 
 	@Before
 	public void setUp() throws Exception {
@@ -68,6 +73,19 @@ public class POSBatchModeTest {
 	@Test
 	public void initTest(){
 		POS.getInst().init();
+	}
+	
+	@Test
+	public void registerTest(){
+		POS.getInst().register();
+	}
+	
+	@Test
+	public void testMain(){
+		String []s = {"input_example1.txt"};
+		// due to the membership card bug, we provide this information mannualy
+		systemInMock.provideText("y\n");
+		POS.main(s);
 	}
 	
 }

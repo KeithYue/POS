@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -24,12 +25,13 @@ public class ProductDiscountTest {
 
 	@Test
 	public void testDiscount() {
-		Assert.assertTrue(productDisconut.discount() == 0.2f);
+		Assert.assertThat(0.2f, is(productDisconut.discount()));
 	}
 
 	@Test
 	public void testDiscountMessage() {
-		Assert.assertTrue(productDisconut.discountMessage() == "\tProduct Discount: 20%\n");
+		// Assert.assertTrue(productDisconut.discountMessage() == "\tProduct Discount: 20%\n");
+		Assert.assertThat("\tProduct Discount: 20%\n", is(productDisconut.discountMessage()));
 	}
 
 }
